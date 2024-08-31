@@ -63,7 +63,7 @@ const moles = [
         status: "sad",
         next: getSadInterval(),
         king: false,
-        node: document.getElementById("hole-9")
+        node: document.getElementById("hole-8")
     },
 ]
 
@@ -109,8 +109,8 @@ const getNextStatus = (mole) => {
 }
 
 const win = () => {
-    document.querySelector(".bg").classList.add("hide")
-    document.querySelector(".win").classList.remove("hide")
+    mainContainer.classList.add("hide")
+    document.querySelector(".win-screen").classList.remove("hide")
     resetButton.classList.remove("hide")
 }
 
@@ -156,9 +156,9 @@ startButton.addEventListener("click", () => {
 })
 resetButton.addEventListener("click", () => {
     resetButton.classList.add("hide")
-    document.querySelector(".bg").classList.remove("hide")
-    document.querySelector(".win").classList.add("hide")
-    score = 0
+    mainContainer.classList.remove("hide")
+    document.querySelector(".win-screen").classList.add("hide")
     document.querySelector(".worm-container").style.width = "5%"
+    score = 0
 })
 nextFrame()
