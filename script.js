@@ -6,6 +6,9 @@ const getSadInterval = () => Date.now() + 1000 // 1 sec
 const getGoneInterval = () => Date.now() + Math.floor(Math.random() * 18000) + 2000; // 2-20 secs
 const getHungryInterval = () => Date.now() + Math.floor(Math.random() * 3000) + 2000; // 2-5 secs
 const getKingStatus = () => Math.random() > .9; // %10 chance
+const startButton = document.querySelector(".start")
+const resetButton = document.querySelector(".reset")
+const mainContainer = document.querySelector(".main-container")
 
 const moles = [
     {
@@ -60,12 +63,6 @@ const moles = [
         status: "sad",
         next: getSadInterval(),
         king: false,
-        node: document.getElementById("hole-8")
-    },
-    {
-        status: "sad",
-        next: getSadInterval(),
-        king: false,
         node: document.getElementById("hole-9")
     },
 ]
@@ -114,6 +111,7 @@ const getNextStatus = (mole) => {
 const win = () => {
     document.querySelector(".bg").classList.add("hide")
     document.querySelector(".win").classList.remove("hide")
+    resetButton.classList.remove("hide")
 }
 
 const feed = (event) => {
@@ -151,4 +149,16 @@ const nextFrame = () => {
 }
 
 document.querySelector(".bg").addEventListener("click", feed);
+startButton.addEventListener("click", () => {
+    mainContainer.classList.remove("hide")
+    startButton.classList.add("hide")
+    document.querySelector(".init").classList.add("hide")
+})
+resetButton.addEventListener("click", () => {
+    resetButton.classList.add("hide")
+    document.querySelector(".bg").classList.remove("hide")
+    document.querySelector(".win").classList.add("hide")
+    score = 0
+    document.querySelector(".worm-container").style.width = "5%"
+})
 nextFrame()
