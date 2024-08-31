@@ -2,18 +2,43 @@
     box-sizing: border-box;
 }
 body{
-    cursor: url(./img/cursor.png), default;
     background-color: #c0c86d;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
+
+.init{
+    margin-top: 100px;
+    font-size: larger;
+    font-family:cursive;
+    text-align: center;
+}
+
+.controls{
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+}
+
+.reset,
+.start{
+    font-size: large;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-family:cursive;
+    margin-top: 20px;
+}
+
+
 .main-container{
     width: 100%;
     height: 100vh;
 }
  
 .bg {
+    cursor: url(./img/cursor.png), default;
     background-image: url(./img/background.png);
     background-repeat: no-repeat;
     height: 100%;
@@ -50,14 +75,29 @@ body{
 .gone {
     display: none;
 }
+
 .worm {
     width:70vw;
 }
+
 .worm-container {
     overflow: hidden;
     transition: width 0.5s ease-in-out;
 }
+
 .worm-box {
     width: 70vw;
     margin:auto;
+}
+
+.win-screen{
+    margin-top: 100px;
+    font-size: larger;
+    font-family:cursive;
+    text-align: center;
+    max-height: 720px;
+}
+
+.win_image{
+    width: 540px;
 }
