@@ -3,7 +3,7 @@ Feeding moles game that has written with Javascript that is part of an bootcamp 
 I have made some changes and improve the game with some personal touch, enjoy!
 
 ## Usage
-To play the game simple go to [todo]()
+To play the game simple click [here](https://gerile3.github.io/Feed-Moles/)!
 
 ## License
 
